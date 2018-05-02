@@ -1,5 +1,7 @@
 package com.claim;
 
+import java.util.Comparator;
+
 public class Person {
 
 	private String firstName;
@@ -32,6 +34,17 @@ public class Person {
 		return str;
 	}
 
+	/*Comparator for sorting the list by Student Name*/
+	public static Comparator<Person> StuNameComparator = new Comparator<Person>() {
+
+		public int compare(Person s1, Person s2) {
+			String StudentName1 = s1.getFirstName().toUpperCase();
+			String StudentName2 = s2.getFirstName().toUpperCase();
+
+			//ascending order
+			return StudentName1.compareTo(StudentName2);
+		}
+	};
 	// Getters and Setters
 
 	public String getFirstName() {
@@ -41,7 +54,7 @@ public class Person {
 		this.firstName = firstName;
 	}
 	public String getLastName() {
-		
+
 		return lastName;
 	}
 	public void setLastName(String lastName) {

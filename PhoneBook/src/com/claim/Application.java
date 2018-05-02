@@ -1,7 +1,7 @@
 package com.claim;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Application {
@@ -12,8 +12,6 @@ public class Application {
 	// method to enter records in address book
 
 	public static void addRecord(ArrayList<Person> Persons)
-
-
 
 	{
 		String firstname,lastname,telephoneNumber, city, street, state, zip;
@@ -145,14 +143,13 @@ public class Application {
 
 	public static void displayAllRecords(ArrayList<Person> persons)
 
+	{    Collections.sort(persons, Person.StuNameComparator);
+
+	for(Person p: persons)
 	{
-		for(int i = 0; i<persons.size(); i++)
+		System.out.println(p);
+	}
 
-		{
-
-		 System.out.println(persons.get(i));
-
-		}
 	}
 
 	public static void main(String[] args) {
